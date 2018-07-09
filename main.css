@@ -7,6 +7,8 @@
   max-width:720px;
   position:relative;
   height:100%;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 /* define the left and right columns */
@@ -75,7 +77,6 @@ nav ul li a img {
 /* links in navigation bar should be black without underline */
 nav ul li a {
   text-decoration: none;
-  color: black;
 }
 
 /* hide links until user hovers with mouse */
@@ -97,9 +98,17 @@ nav ul li a {
 }
 
 /* position and size image for downloading publications */
-.publications img {
-  width:20px;
+.pub img {
+  width:100%;
+  max-width:25px;
   float:right;
+  padding-left:5%;
+  padding-top:1%;
+}
+
+/* links should be black */
+a {
+  color: black;
 }
 
 /* change site display when screen width goes above 720px */
@@ -107,7 +116,6 @@ nav ul li a {
   .tooltip {
     visibility:hidden;
   }
-
   .left-column {
     width:50%;
   }
