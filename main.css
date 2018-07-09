@@ -1,8 +1,44 @@
+/* Thanks to Florainne Walcott-Taylor who helped greatly with the style and design of this site. */
+
+@import url('https://fonts.googleapis.com/css?family=Orbitron|Roboto+Condensed|Overpass+Mono|Aldrich|Fira+Mono|Metrophobic|Saira+Condensed');
+
+/* define each row in the site. */
+.row {
+  max-width:720px;
+  position:relative;
+  height:100%;
+}
+
+/* define the left and right columns */
+.left-column {
+  float:left;
+  width:100%;
+  padding-right:1%;
+  padding-top:1%;
+  padding-bottom:1%;
+  box-sizing: border-box;
+}
+
+.right-column {
+  float:right;
+  width:100%;
+  padding-left:1%;
+  padding-top:1%;
+  padding-bottom:1%;
+  box-sizing: border-box;
+}
+
 body {
   width: 100%;
+  max-width: 720px;
   padding: 25px 0;
   margin: 0 auto;
-  font-family: "Trebuchet MS",sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+h1 {
+  font-size:2.0rem;
+  letter-spacing:0.3rem;
 }
 
 body img {
@@ -20,45 +56,31 @@ nav ul {
 
 nav ul li {
   display: inline;
+  font-family: 'Aldrich', sans-serif;
 }
 
 nav ul li a {
   display: inline-block;
   width: 100%;
-  max-width: 65px;
+  max-width: 72px;
   padding: 0 0px;
 }
 
 nav ul li a img {
   width: 100%;
-  max-width: 30px;
+  max-width: 25px;
   height: auto;
 }
 
 /* links in navigation bar should be black without underline */
-nav ul li a:link {
-  text-decoration: none;
-  color: black;
-}
-
-nav ul li a:visited {
-  text-decoration: none;
-  color: black;
-}
-
-nav ul li a:hover {
-  text-decoration: none;
-  color: black;
-}
-
-nav ul li a:active {
+nav ul li a {
   text-decoration: none;
   color: black;
 }
 
 /* hide links until user hovers with mouse */
 .tooltip {
-  visibility:hidden;
+  visibility:visible;
   font-size:12px;
 }
 
@@ -66,6 +88,30 @@ nav ul li a:active {
   visibility:visible;
 }
 
-.rounded-image {
+/* circular image for landing page */
+
+.splash-image {
+  width: 100%;
   border-radius: 50%;
+  max-width: 360px;
+}
+
+/* position and size image for downloading publications */
+.publications img {
+  width:20px;
+  float:right;
+}
+
+/* change site display when screen width goes above 720px */
+@media only screen and (min-width: 720px) {
+  .tooltip {
+    visibility:hidden;
+  }
+
+  .left-column {
+    width:50%;
+  }
+  .right-column {
+    width:50%;
+  }
 }
