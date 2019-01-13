@@ -1,41 +1,34 @@
-/* Thanks to Florainne Walcott-Taylor who helped greatly with the style and design of this site. */
+/* Xavier Capaldi, 2019 */
+/* Feel free to use the layout of this site in part or full. */
 
-@import url('https://fonts.googleapis.com/css?family=Orbitron|Roboto+Condensed|Overpass+Mono|Aldrich|Fira+Mono|Metrophobic|Saira+Condensed');
+@import
+url('https://fonts.googleapis.com/css?family=Orbitron|Roboto+Condensed|Overpass+Mono|Aldrich|Fira+Mono|Metrophobic|Saira+Condensed|VT323');
 
-/* define each row in the site. */
-.row {
-  max-width:720px;
-  position:relative;
-  height:100%;
-  text-align: justify;
-  text-justify: inter-word;
-}
-
-/* define the left and right columns */
-.left-column {
-  float:left;
-  width:100%;
-  padding-right:1%;
-  padding-top:1%;
-  padding-bottom:1%;
+/* padding and border elements are included in the total width and heights */
+* {
   box-sizing: border-box;
 }
 
-.right-column {
-  float:right;
-  width:100%;
-  padding-left:1%;
-  padding-top:1%;
-  padding-bottom:1%;
-  box-sizing: border-box;
+[class*="col-"] {
+  float: left;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* clear the flow after each row */
+.row::after {
+   content:"";
+   clear: both;
+   display: table;
 }
 
 body {
-  width: 95%;
+  width: 100%;
   max-width: 720px;
-  padding: 25px 0;
+  /*padding: 25px 0;*/
   margin: 0 auto;
   font-family: 'Roboto Condensed', sans-serif;
+  text-align: justify;
 }
 
 h1 {
@@ -43,50 +36,50 @@ h1 {
   letter-spacing:0.3rem;
 }
 
-body img {
-  max-width: 100%;
-  height: auto;
+h2 {
+  font-size:1.1rem;
 }
 
-/* making the navigation bar */
-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+/* links should be black */
+a {
+  color: black;
+}
+
+a:hover {
+  color: white;
+  background-color: black;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: auto;
+}
+
+.nav img {
+  display: block;
+  margin: auto;
+  width: 25px;
+  height:auto;
+}
+
+.tooltip {
+  /*font-family: 'Aldritch', sans-serif;*/
   text-align: center;
 }
 
-nav ul li {
-  display: inline;
-  font-family: 'Aldrich', sans-serif;
+.nav:hover + .tooltip {
+  visibility: visible;
 }
 
-nav ul li a {
-  display: inline-block;
-  width: 100%;
-  max-width: 72px;
-  padding: 0 0px;
-}
-
-nav ul li a img {
-  width: 100%;
-  max-width: 25px;
-  height: auto;
-}
-
-/* links in navigation bar should be black without underline */
-nav ul li a {
-  text-decoration: none;
-}
-
-/* hide links until user hovers with mouse */
-.tooltip {
-  visibility:visible;
-  font-size:12px;
-}
-
-.menu:hover + .tooltip {
-  visibility:visible;
+.pub img {
+  display: block;
+  margin: auto;
+  width: 20px;
+  height:auto;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 
 /* circular image for landing page */
@@ -97,29 +90,41 @@ nav ul li a {
   max-width: 360px;
 }
 
-/* position and size image for downloading publications */
-.pub img {
-  width:100%;
-  max-width:25px;
-  float:right;
-  padding-left:5%;
-  padding-top:1%;
+/* for extra small devices: */
+[class*="col-"] {
+  width: 100%;
 }
 
-/* links should be black */
-a {
-  color: black;
+@media only screen and (min-width: 300px) {
+  /* For tablets: */
+  .col-s-1 {width: 8.33%;}
+  .col-s-2 {width: 16.66%;}
+  .col-s-3 {width: 25%;}
+  .col-s-4 {width: 33.33%;}
+  .col-s-5 {width: 41.66%;}
+  .col-s-6 {width: 50%;}
+  .col-s-7 {width: 58.33%;}
+  .col-s-8 {width: 66.66%;}
+  .col-s-9 {width: 75%;}
+  .col-s-10 {width: 83.33%;}
+  .col-s-11 {width: 91.66%;}
+  .col-s-12 {width: 100%;}
 }
 
-/* change site display when screen width goes above 720px */
-@media only screen and (min-width: 720px) {
-  .tooltip {
-    visibility:hidden;
-  }
-  .left-column {
-    width:50%;
-  }
-  .right-column {
-    width:50%;
-  }
+@media only screen and (min-width: 600px) {
+  /* For desktops: */
+  .col-1 {width: 8.33%;}
+  .col-2 {width: 16.66%;}
+  .col-3 {width: 25%;}
+  .col-4 {width: 33.33%;}
+  .col-5 {width: 41.66%;}
+  .col-6 {width: 50%;}
+  .col-7 {width: 58.33%;}
+  .col-8 {width: 66.66%;}
+  .col-9 {width: 75%;}
+  .col-10 {width: 83.33%;}
+  .col-11 {width: 91.66%;}
+  .col-12 {width: 100%;}
+  /* hide tooltips when screen is large (mouseover to reveal) */
+  .tooltip {visibility: hidden;}
 }
