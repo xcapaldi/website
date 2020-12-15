@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2020-12-15 Tue 11:12 -->
+<meta charset="utf-8">
+<title>KOH etch calculator</title>
+<meta name="generator" content="Org mode">
+<meta name="author" content="Xavier Capaldi">
+<link rel="stylesheet" type="text/css" href="../../assets/style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<div id="preamble" class="status">
+<div class="flex-nav">  <div class="name">    X. Capaldi |     <a href="../../index.html">      home    </a>  </div>  <a href="https://github.com/xcapaldi" target="_blank">    <img src="../../assets/icons/github.svg" alt="github">    <img src="../../assets/icons/github_white.svg" alt="github">  </a>  <a href="https://www.linkedin.com/in/xavier-capaldi-452a9292" target="_blank">    <img src="../../assets/icons/linkedin.svg" alt="linkedin">    <img src="../../assets/icons/linkedin_white.svg" alt="linkedin">  </a>  <a href="mailto:capaldix@physics.mcgill.ca" target="_blank">    <img src="../../assets/icons/mail.svg" alt="email">    <img src="../../assets/icons/mail_white.svg" alt="email">  </a>  <a href="http://keys.gnupg.net/pks/lookup?op=get&search=0x091B17759759416E" target="_blank">    <img src="../../assets/icons/lock.svg" alt="gpg key">    <img src="../../assets/icons/lock_white.svg" alt="gpg key">  </a>  <a href="../rss.xml" target="_blank">    <img src="../../assets/icons/rss.svg" alt="rss">    <img src="../../assets/icons/rss_white.svg" alt="rss">  </a>  <a href="../theindex.html">    <img src="../../assets/icons/help-circle.svg" alt="information">    <img src="../../assets/icons/help-circle_white.svg" alt="information">  </a>  </div></div><hr>
+</div>
+<div id="content">
+<header>
+<h1 class="title">KOH etch calculator</h1>
+</header><p>
+In my microfabrication processes I often use KOH (potassium hydroxide/caustic potash/lye) to etch silicon and silicon dioxide.
+The etch rate is dependent on KOH concentration and the temperature of the solution.
+When working with delicate features, it is important to precisely control the etch. 
+A web-based etch calculator makes it much easier to set up in the wet lab.
+</p>
+
+<p>
+Previously I used an excellent <a href="http://www.lelandstanfordjunior.com/KOH.html">etch calculator by Maria Pace</a> but it hasn't been working this year.
+Instead, I could use the <a href="https://cleanroom.byu.edu/koh">data from the BYU Integrated Microfabrication Lab</a> but it isn't very convenient.
+With permission from the administrators at BYU, I extracted the data from their plots and fit them myself.
+Using the fits I wrote a calculator in javascript which can estimate the etch rate and perform the dilution calculations.
+It also displays warnings when you the etch parameters are known to cause issues in fabrication processes.
+This was my first javascript program but it very functional.
+</p>
+
+<p>
+<a href="koh-calculator.html">Use the etch and dilution calculators here</a>
+</p>
+
+<p>
+<a href="https://github.com/xcapaldi/koh-calculator">Checkout the source and my fitting methods on Github</a>
+</p>
+</div>
+<div id="postamble" class="status">
+<hr><div class="footer"><p>&#169; 2021 Xavier Capaldi</p><p>Published 2020-08-23 Sun 00:00 - Last modified 2020-12-14 Mon 19:10</p></div>
+</div>
+</body>
+</html>

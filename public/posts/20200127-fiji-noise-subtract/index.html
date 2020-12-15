@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2020-12-15 Tue 11:12 -->
+<meta charset="utf-8">
+<title>ImageJ/FIJI plugins for background subtraction and stack operations</title>
+<meta name="generator" content="Org mode">
+<meta name="author" content="Xavier Capaldi">
+<link rel="stylesheet" type="text/css" href="../../assets/style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<div id="preamble" class="status">
+<div class="flex-nav">  <div class="name">    X. Capaldi |     <a href="../../index.html">      home    </a>  </div>  <a href="https://github.com/xcapaldi" target="_blank">    <img src="../../assets/icons/github.svg" alt="github">    <img src="../../assets/icons/github_white.svg" alt="github">  </a>  <a href="https://www.linkedin.com/in/xavier-capaldi-452a9292" target="_blank">    <img src="../../assets/icons/linkedin.svg" alt="linkedin">    <img src="../../assets/icons/linkedin_white.svg" alt="linkedin">  </a>  <a href="mailto:capaldix@physics.mcgill.ca" target="_blank">    <img src="../../assets/icons/mail.svg" alt="email">    <img src="../../assets/icons/mail_white.svg" alt="email">  </a>  <a href="http://keys.gnupg.net/pks/lookup?op=get&search=0x091B17759759416E" target="_blank">    <img src="../../assets/icons/lock.svg" alt="gpg key">    <img src="../../assets/icons/lock_white.svg" alt="gpg key">  </a>  <a href="../rss.xml" target="_blank">    <img src="../../assets/icons/rss.svg" alt="rss">    <img src="../../assets/icons/rss_white.svg" alt="rss">  </a>  <a href="../theindex.html">    <img src="../../assets/icons/help-circle.svg" alt="information">    <img src="../../assets/icons/help-circle_white.svg" alt="information">  </a>  </div></div><hr>
+</div>
+<div id="content">
+<header>
+<h1 class="title">ImageJ/FIJI plugins for background subtraction and stack operations</h1>
+</header><p>
+<a href="https://fiji.sc/">Fiji</a> is a extended distribution of the open source <a href="https://imagej.net/Welcome">ImageJ</a> platform for scientific image analysis.
+It is an excellent tool for working with microscopy data.
+While the tool is written in Java, it is highly extensible through scripts which can be written in a variety of languages.
+</p>
+
+<div id="outline-container-orgb90020d" class="outline-2">
+<h2 id="orgb90020d">Background subtraction</h2>
+<div class="outline-text-2" id="text-orgb90020d">
+<p>
+I wrote a python/jython plugin implements an algorithm developed by Patrick Doyle's group at MIT.
+It performs a two-stage background removal on fluorescent microscopy data, particularly that of DNA.
+The algorithm is detailed (with small errors) in the supplementary information for the following journal article:
+</p>
+
+<p>
+Revisiting the Conformation and Dynamics of DNA in Slitlike Confinement Jing Tang, Stephen L. Levy, Daniel W. Trahan, Jeremy J. Jones, Harold G. Craighead, and Patrick S. Doyle Macromolecules 2010 43 (17), 7368-7377 DOI: 10.1021/ma101157x
+</p>
+
+<p>
+If you use this plugin to analyze data for publication, please cite this paper.
+</p>
+
+
+<figure>
+<img src="background-subtract.jpg" alt="background-subtract.jpg">
+
+<figcaption><span class="figure-number">Figure 1: </span>Examples of background subtraction on single-channel data (λ-DNA stained with YOYO-1) [top] and two-channel data (two differentially stained λ-DNA with YOYO-1 and YOYO-3) [bottom].</figcaption>
+</figure>
+</div>
+
+<div id="outline-container-orgcec3ef9" class="outline-3">
+<h3 id="orgcec3ef9">Algorithm</h3>
+<div class="outline-text-3" id="text-orgcec3ef9">
+<p>
+The algorithm itself has two steps.
+I've modified (corrected?) it from the original in the supplementary information.
+Be aware that the resulting image will be smaller by four pixels in both width and height due to the nature of the subtraction algorithm. 
+</p>
+</div>
+
+<div id="outline-container-org9186d7a" class="outline-4">
+<h4 id="org9186d7a">Initial subtraction</h4>
+<div class="outline-text-4" id="text-org9186d7a">
+<p>
+The mean intensity of the pixels along the boundary of the image is subtracted from all the pixels in the image.
+In addition, the sample standard deviation (σ) of the boundary pixels is calculated.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org4c28495" class="outline-4">
+<h4 id="org4c28495">Individual noise spot removal</h4>
+<div class="outline-text-4" id="text-org4c28495">
+<p>
+We iterate through each pixel of the image.
+The mean intensity of 8 pixels surrounding the target pixel in a 3x3 region is calculated.
+The mean intensity of 16 pixels surrounding the target pixel in a 5x5 region is calculated.
+If either mean intensities are less than three times the sample standard deviation (sigma), the pixel is taken to be noise and set to an intensity of 0.
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf7b583f" class="outline-2">
+<h2 id="orgf7b583f">Multi-crop utilities</h2>
+<div class="outline-text-2" id="text-orgf7b583f">
+<p>
+I also wrote a set of three plugins which provide quality of life utilities for working with fluorescence microscopy image stacks.
+Normally the field of view recorded by the camera in the microscope is larger than the sample of interest and may contain several distinct samples.
+Before beginning any significant data processing we would like to crop the captured data to a reasonable size.
+The following three packages should make that process much easier and faster:
+</p>
+</div>
+
+<div id="outline-container-orgdb903ef" class="outline-3">
+<h3 id="orgdb903ef">channel split</h3>
+<div class="outline-text-3" id="text-orgdb903ef">
+<p>
+This plugin takes a multichannel tif stack and splits the channels into distinct tif stacks.
+These are automaticaly saved with appropriate names in the same folder as the original file.
+Then the stacks have their contrast enhanced and they are recombined into an RGB stack which allows you to view the channels simultaneously.
+Currently this plugin should be able to handle at least up to six channels although I haven't tested higher than that.
+The RGB stack is <b>not</b> automatically saved.
+It's main purpose is to be used in the subsequent package.
+Also note that the original data is not modified by the contrast enhancement.
+That is just temporary to ease the preprocessing.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org9f45523" class="outline-3">
+<h3 id="org9f45523">multi-select</h3>
+<div class="outline-text-3" id="text-org9f45523">
+<p>
+This plugin takes a tif stack and displays the Z-projection (max).
+It then enables the ROI manager which allows you to draw and add multiple rectangular regions of interest.
+These can be added, modified and deleted manually in the ROI manager.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org27ddcf0" class="outline-3">
+<h3 id="org27ddcf0">multi-crop</h3>
+<div class="outline-text-3" id="text-org27ddcf0">
+<p>
+This plugin takes the open ROIs in the ROI manager and applies them to any number of original datasets that you've selected.
+Those stacks are then automatically cropped multiple times into the correct ROIs.
+These are automatically saved in the same folder as the original file with a name ending in roi-x-y-w-h where x and y are the position and w and h are the width and height of the region of interest.
+An overlay can also be saved manually for reference if desired.
+Again, the raw data is not altered at all in this process.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org61b55b2" class="outline-2">
+<h2 id="org61b55b2">Installation</h2>
+<div class="outline-text-2" id="text-org61b55b2">
+<p>
+You can <a href="https://github.com/xcapaldi/imagej_noise-subtract">download the background subtraction source from Github</a>.
+The source for the <a href="https://github.com/xcapaldi/imagej_multicrop">multi-crop utilities in in another repository</a>.
+</p>
+
+<p>
+In Gnu/Linux and Windows, place the noise_subtract.py file inside the Fiji.app/plugins folder (or any subfolder).
+In MacOSX go to the "Applications" folder in Finder, right-click on the Fiji icon and select "Show package contents" to find the plugins folder.
+</p>
+
+<p>
+Then in Fiji go to Help -&gt; Refresh Menus.
+You will have to restart Fiji and then the plugin will appear in the Plugins menu.
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<hr><div class="footer"><p>&#169; 2021 Xavier Capaldi</p><p>Published 2020-01-27 Mon 00:00 - Last modified 2020-12-14 Mon 19:04</p></div>
+</div>
+</body>
+</html>

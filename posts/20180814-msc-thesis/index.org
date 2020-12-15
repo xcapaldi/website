@@ -1,0 +1,22 @@
+#+TITLE: Masters Thesis
+#+AUTHOR: Xavier Capaldi
+#+DATE: [2018-08-14 Tue]
+#+INDEX: publications
+#+INDEX: about
+
+*Abstract:* A pneumatically-actuated membrane device is designed and fabricated to dynamically confine multiple DNA chains into nanoscale pit features.
+A nanoscale nitride membrane is used as a lid that deflects under pneumatic pressure.
+With this device single λ-DNA and plasmid DNA are studied in a confined environment.
+In addition systems are studied containing two λ-DNA chains or a single λ-DNA with a plasmid.
+The interactions of multiple confined macromolecules were quantified, which is relevant in the study of biological systems in which multiple DNA molecules are highly confined by cell walls and other organelles.
+This confinement is found to greatly impact the polymer dynamics and molecule conformation.
+In addition preliminary work has been done to extend the device to map unstained molecules trapped under a membrane in fluorescent buffer.
+
+A thesis submitted to McGill University in partial fulfillment of the requirements of the degree of Master of Science.
+
+I included substantial sections on the historical development of pneumatically actuated microfluidic devices as well as the fabrication process I developed to produce our own.
+You can [[file:capaldi-2018-nanof-devic.pdf][read my thesis here]].
+
+[[file:capaldi-2018-nanof-devic.bib][Cite this thesis]]
+
+[[file:cover.jpg]]

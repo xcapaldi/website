@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<!-- Xavier Capaldi, 2021 -->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/style.css">
+    <title>X. Capaldi</title>
+  </head>
+  <body>
+    <div class="flex-nav">
+      <div class="name">
+        X. Capaldi
+      </div>
+      <a href="https://github.com/xcapaldi" target="_blank">
+        <img src="assets/github.svg" alt="github">
+       <img src="assets/github_white.svg" alt="github">
+      </a>
+      <a href="https://www.linkedin.com/in/xavier-capaldi-452a9292" target="_blank">
+        <img src="assets/linkedin.svg" alt="linkedin">
+       <img src="assets/linkedin_white.svg" alt="linkedin">
+      </a>
+      <a href="mailto:xavier.capaldi@mcgill.ca" target="_blank">
+        <img src="assets/mail.svg" alt="email">
+        <img src="assets/mail_white.svg" alt="email">
+      </a>
+      <a href="http://keys.gnupg.net/pks/lookup?op=get&search=0x091B17759759416E" target="_blank">
+        <img src="assets/lock.svg" alt="gpg key">
+        <img src="assets/lock_white.svg" alt="gpg key">
+      </a>
+      <a href="rss.xml" target="_blank">
+        <img src="assets/rss.svg" alt="rss">
+        <img src="assets/rss_white.svg" alt="rss">
+      </a>
+      <a href="info.html" target="_blank">
+        <img src="assets/help-circle.svg" alt="info">
+        <img src="assets/help-circle_white.svg" alt="info">
+      </a>
+      </div>
+    </div>
+    <hr>
+    <!-- radio buttons for filter choices -->
+    <input type="radio" id="all" name="categories" value="all" checked>
+    <input type="radio" id="publications" name="categories" value="publications">
+    <input type="radio" id="code" name="categories" value="code">
+    <input type="radio" id="projects" name="categories" value="projects">
+    <input type="radio" id="opinion" name="categories" value="opinion">
+    <input type="radio" id="about" name="categories" value="about">
+    <!-- labels to replace radio buttons -->
+    <div class="filters">
+      <label for="all">All</label>
+      <label for="publications">Publications</label>
+      <label for="code">Code</label>
+      <label for="projects">Projects</label>
+      <label for="opinion">Opinion</label>
+      <label for="about">About</label>
+    </div>
+    <!-- posts -->
+    <div class="posts">
+      <a class="post" data-category="about" href="http://www.xkcd.com">
+        <div class="post-title">
+            Who am I? I am but a man with a very long sentence that I want to test.
+        </div>
+        <div class="post-date">
+          2020-09-26
+        </div>
+      </a>
+      <a class="post" data-category="about" href="xkcd.com">
+        <div class="post-title">
+            Who am I? I am but a man with a very long sentence that I want to test.
+        </div>
+        <div class="post-date">
+          2020-09-26
+        </div>
+      </a>
+      <a class="post" data-category="publications opinion" href="duckduckgo.com">
+        <div class="post-title">
+            Paper 1
+        </div>
+        <div class="post-date">
+          2020-09-26
+        </div>
+      </a>
+      <a class="post" data-category="publications" href="duckduckgo.com">
+        <div class="post-title">
+            Paper 1
+        </div>
+        <div class="post-date">
+          2020-09-26
+        </div>
+        </a>
+    </div>
+    <div class="footer">
+      &#169; 2021 Xavier Capaldi
+    </div>
+  </body>
+</html>

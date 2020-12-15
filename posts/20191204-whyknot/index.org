@@ -1,0 +1,21 @@
+#+TITLE: Whyknot
+#+AUTHOR: Xavier Capaldi
+#+DATE: [2019-12-04 Wed]
+#+INDEX: code
+
+During the summer of 2019, our group generated several thousand macroscopic knots to study non-equilibrium knot formation.
+Previous studies on macroscopic knotting generated fairly simple knots that could be simplified and identified by hand.
+In our case however, we generated complex knots (as high as 60 strand crossings) so we needed a better method to process the knot images.
+[[https://github.com/SPOCKnots/pyknotid][Pyknotid]] is a python package developed as part of Scientific Properties of Complex Knots (SPOCK) collaboration.
+It is capable of simplifying 2D knot diagrams and identifying the resulting prime knot.
+The main limitation however was getting images of knots into a format that Pyknotid is capable of processing.
+To this end, my brother and I wrote a graphical interface with Tkinter which allows the user to draw the knot diagram, arrange strand crossings, simplify the knot and record the results for further analysis.
+It is not very polished and a few bugs still exist but the tool has served its purpose well.
+We were able to process thousands of complex knots and the resulting paper is currently under review for publication.
+
+#+CAPTION: Main interface to Whyknot
+[[file:interface.jpg]]
+
+You can [[https://github.com/xcapaldi/whyknot][download Whyknot from Github]].
+
+Also check out [[https://github.com/kmill/knotfolio][Kyle Miller's KnotFolio]] which has similar functionality and can import images.

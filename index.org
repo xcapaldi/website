@@ -1,0 +1,25 @@
+#+TITLE: X. Capaldi - Personal Blog
+
+- [[file:theindex.org][Hello]]
+- 20160426-honors-thesis
+  - [[file:20160426-honors-thesis/index.org][Honors Thesis]]
+- 20180814-msc-thesis
+  - [[file:20180814-msc-thesis/index.org][Masters Thesis]]
+- 20180906-2-dna-1-cavity
+  - [[file:20180906-2-dna-1-cavity/index.org][Probing the Organization and Dynamics of Two DNA Chains Trapped in a Nanofluidic Cavity]]
+- 20190128-graphene-probes
+  - [[file:20190128-graphene-probes/index.org][From 2D to 3D: Graphene molding for transparent and flexible probes]]
+- 20190327-cardiac-s-looping
+  - [[file:20190327-cardiac-s-looping/index.org][On the Biomechanics of Cardiac S-Looping in the Chick: Insights from modeling and perturbation studies]]
+- 20190424-tclb
+  - [[file:20190424-tclb/index.org][Nanopore Formation via Tip-Controlled Local Breakdown Using an Atomic Force Microscope]]
+- 20191204-whyknot
+  - [[file:20191204-whyknot/index.org][index]]
+- 20191220-tclb-instrumentation
+  - [[file:20191220-tclb-instrumentation/index.org][An Apparatus Based on an Atomic Force Microscope for Implementing Tip-Controlled Local Breakdown]]
+- 20200127-fiji-noise-subtract
+  - [[file:20200127-fiji-noise-subtract/index.org][ImageJ/FIJI plugins for background subtraction and stack operations]]
+- 20200515-tbkm
+  - [[file:20200515-tbkm/index.org][Terminal Braid Knotting Model]]
+- 20200823-koh-calculator
+  - [[file:20200823-koh-calculator/index.org][KOH etch calculator]]

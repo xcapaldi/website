@@ -1,0 +1,39 @@
+#+TITLE: Hello
+
+My name is Xavier Capaldi.
+I am a Ph.D. candidate in the biological and biomedical engineering program at McGill University (Montréal, Québec).
+I work with [[http://www.physics.mcgill.ca/~reisner/][Professor Walter Reisner]] in the department of physics.
+My M.Sc. in physics was completed under his tutelage on the topic of nanoconfined polymers.
+I developed and fabricated nanofluidic devices with pneumatically-actuated membranes capable of trapping multiple DNA molecules in nanoscale cavities.
+Now my Ph.D. work has shifted toward solid-state nanopore sequencing technologies.
+Progress is currently slow with all the COVID-19 restrictions on lab access but I've still been able to make good progress over the last months of lockdown. 
+
+* Interests
+When I’m not working, I pursue a variety of other hobbies and projects.
+I love immersing myself in complex systems and problems; both physical and digital.
+I have a lot of experience with Python for data analysis but I've also used it to develop GUI applications and interface with electronics via serial.
+I've dabbled in javascript but I am really interested in exploring C and WASM.
+My other hobbies include fountain pens, keyboards, cooking, freshwater aquariums, rugby, accessibility, dragonboat, history, electronics, philosophy, education reform and social issues.
+I've dabbled in many others in the past as well. 
+
+* Structure of this site
+This website serves to consolidate my various projects, opinions and achievements in a sort of pseudo-blog.
+I write each entry in Org Mode for GNU Emacs and thanks to its publishing capabilities, in combination with my custom CSS, configuration and completion scripts, I can easily convert my thoughts into posts that look at least somewhat decent.
+In particular, I have designed the file structure such that each post is completely self-contained (save for the style sheets).
+All relevant images and scripts are maintained in the same directory as the post itself, making it easy to curl them together and play with the source.
+There is no javascript necessary on the homepage because the filtering mechanism is accomplished entirely with CSS.
+I've tried to ensure all prose and code samples comply to WGAG AAA contrast ratios although individual images may not be colorblind-friendly.
+You may notice this website is lacking an SSL certificate which means any communication between the server and your computer is not encrypted.
+This shouldn't pose any security risk to you because I don't ask for any input (i.e. contact information).
+Any projects running javascript are actually run on your local browser.
+Perhaps in the future I will add an SSL certificate if this site starts to receive a lot of traffic or if I start running scripts server-side.
+
+I've included links to my Github and Linkedin in the navigation bar.
+You can reach out to me via email and I've included my GPG key for encrypted communication.
+If you'd like to receive updates automatically you can add my RSS feed to your feed reader.
+Otherwise, navigation of the homepage should be self-explanatory.
+I've included an index of postings below if you are searching for something in particular.
+
+* Index
+#+INCLUDE: "theindex.inc"
+

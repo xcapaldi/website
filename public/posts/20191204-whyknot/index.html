@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2020-12-15 Tue 11:12 -->
+<meta charset="utf-8">
+<title>&lrm;</title>
+<meta name="generator" content="Org mode">
+<meta name="author" content="Xavier Capaldi">
+<link rel="stylesheet" type="text/css" href="../../assets/style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<div id="preamble" class="status">
+<div class="flex-nav">  <div class="name">    X. Capaldi |     <a href="../../index.html">      home    </a>  </div>  <a href="https://github.com/xcapaldi" target="_blank">    <img src="../../assets/icons/github.svg" alt="github">    <img src="../../assets/icons/github_white.svg" alt="github">  </a>  <a href="https://www.linkedin.com/in/xavier-capaldi-452a9292" target="_blank">    <img src="../../assets/icons/linkedin.svg" alt="linkedin">    <img src="../../assets/icons/linkedin_white.svg" alt="linkedin">  </a>  <a href="mailto:capaldix@physics.mcgill.ca" target="_blank">    <img src="../../assets/icons/mail.svg" alt="email">    <img src="../../assets/icons/mail_white.svg" alt="email">  </a>  <a href="http://keys.gnupg.net/pks/lookup?op=get&search=0x091B17759759416E" target="_blank">    <img src="../../assets/icons/lock.svg" alt="gpg key">    <img src="../../assets/icons/lock_white.svg" alt="gpg key">  </a>  <a href="../rss.xml" target="_blank">    <img src="../../assets/icons/rss.svg" alt="rss">    <img src="../../assets/icons/rss_white.svg" alt="rss">  </a>  <a href="../theindex.html">    <img src="../../assets/icons/help-circle.svg" alt="information">    <img src="../../assets/icons/help-circle_white.svg" alt="information">  </a>  </div></div><hr>
+</div>
+<div id="content">
+<p>
+#TITLE: Whyknot
+</p>
+<p>
+During the summer of 2019, our group generated several thousand macroscopic knots to study non-equilibrium knot formation.
+Previous studies on macroscopic knotting generated fairly simple knots that could be simplified and identified by hand.
+In our case however, we generated complex knots (as high as 60 strand crossings) so we needed a better method to process the knot images.
+<a href="https://github.com/SPOCKnots/pyknotid">Pyknotid</a> is a python package developed as part of Scientific Properties of Complex Knots (SPOCK) collaboration.
+It is capable of simplifying 2D knot diagrams and identifying the resulting prime knot.
+The main limitation however was getting images of knots into a format that Pyknotid is capable of processing.
+To this end, my brother and I wrote a graphical interface with Tkinter which allows the user to draw the knot diagram, arrange strand crossings, simplify the knot and record the results for further analysis.
+It is not very polished and a few bugs still exist but the tool has served its purpose well.
+We were able to process thousands of complex knots and the resulting paper is currently under review for publication.
+</p>
+
+
+<figure>
+<img src="interface.jpg" alt="interface.jpg">
+
+<figcaption><span class="figure-number">Figure 1: </span>Main interface to Whyknot</figcaption>
+</figure>
+
+<p>
+You can <a href="https://github.com/xcapaldi/whyknot">download Whyknot from Github</a>.
+</p>
+
+<p>
+Also check out <a href="https://github.com/kmill/knotfolio">Kyle Miller's KnotFolio</a> which has similar functionality and can import images.
+</p>
+</div>
+<div id="postamble" class="status">
+<hr><div class="footer"><p>&#169; 2021 Xavier Capaldi</p><p>Published 2019-12-04 Wed 00:00 - Last modified 2020-12-14 Mon 19:14</p></div>
+</div>
+</body>
+</html>

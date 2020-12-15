@@ -1,0 +1,24 @@
+#+TITLE: An Apparatus Based on an Atomic Force Microscope for Implementing Tip-Controlled Local Breakdown
+#+AUTHOR: Xavier Capaldi
+#+DATE: [2019-12-20 Fri]
+#+INDEX: publications
+
+*Abstract:* Solid-state nanopores are powerful tools for sensing of single biomolecules in solution.
+Fabrication of solid-state nanopores is still challenging, however; in particular, new methods are needed to facilitate the integration of pores with larger nanofluidic and electronic device architectures.
+We have developed the tip-controlled local breakdown (TCLB) approach, in which an atomic force microscope (AFM) tip is brought into contact with a silicon nitride membrane that is placed onto an electrolyte reservoir.
+The application of a voltage bias at the AFM tip induces a dielectric breakdown that leads to the formation of a nanopore at the tip position.
+In this work, we report on the details of the apparatus used to fabricate nanopores using the TCLB method, and we demonstrate the formation of nanopores with smaller, more controlled diameters using a current limiting circuit that zeroes the voltage upon pore formation.
+Additionally, we demonstrate the capability of TCLB to fabricate pores aligned to embedded topographical features on the membranes.
+
+*Authors:* T. St-Denis, K. Yazda, *X. Capaldi*, J. Bustamante, M. Safari, Y. Miyahara, Y. Zhang, P. Grutter and W. Reisner
+
+#+CAPTION: Excerpt from paper
+[[file:excerpt.jpg]]
+
+*DOI:* 10.1063/1.5129665
+
+This article may be [[file:st-denis-2019-appar-based.pdf][downloaded for personal use only]].
+Any other use requires prior permission of the author and AIP Publishing.
+This article appeared in Review of Scientific Instruments 90, 123703 (2019) and may be found at [[https://aip.scitation.org/doi/10.1063/1.5129665]].
+
+[[file:st-denis-2019-appar-based.bib][Cite this paper]]
