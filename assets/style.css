@@ -1,26 +1,25 @@
 /* Xavier Capaldi, 2021 */
-/* Feel free to use the layout of this site in part or full. */
 
+/* define your light colorscheme here */
 :root {
-    --background: #F8F8FF;
-    --lightgray: #666666;
-    --darkgray: #333333;
+/*    --background: #FDFDFD;
+    --foreground: #111111; */
+    --background: #FFFFFF;
     --foreground: #000000;
-    --black: #000000;
+    --link:#0000EE;
+    --visited:#551A8B;
 }
 
-/* merriweather-light - latin */
-@font-face {
-  font-family: 'Merriweather';
-  font-style: normal;
-  font-weight: 300;
-  src: url('../assets/fonts/merriweather-v22-latin-300.eot'); /* IE9 Compat Modes */
-  src: local(''),
-         url('../assets/fonts/merriweather-v22-latin-300.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-         url('../assets/fonts/merriweather-v22-latin-300.woff2') format('woff2'), /* Super Modern Browsers */
-         url('../assets/fonts/merriweather-v22-latin-300.woff') format('woff'), /* Modern Browsers */
-         url('../assets/fonts/merriweather-v22-latin-300.ttf') format('truetype'), /* Safari, Android, iOS */
-         url('../assets/fonts/merriweather-v22-latin-300.svg#Merriweather') format('svg'); /* Legacy iOS */
+/* define your dark colorscheme here */
+@media (prefers-color-scheme: dark) {
+    :root {
+/*	--background: #222222;
+	--foreground: #eeeeee;*/
+	--background: #000000;
+	--foreground: #FFFFFF;
+	--link:#FFFF11;
+	--visited:#AAE574;
+    }
 }
 
 /* lato-regular - latin */
@@ -44,179 +43,77 @@
 
 body {
     font-family: "Lato", Helvetica, sans-serif;
-    font-size: 1.125rem;
+    font-size: 1.125rem; /* ~18 px on most browsers */
     margin: 0 auto;
     background-color: var(--background);
     color: var(--foreground);
 }
 
-h1 {
-    font-size: 2.5rem;
-    font-family: 'Merriweather', serif;
-    font-weight: 300;
+header {
+    display: block;
+    width: 100%;
+}
+
+header h1 {
+    display: block;
+    text-align: center;
+    margin: 0.5rem auto;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 1rem auto;
+}
+
+nav img {
+    display: flex;
+    width: 2rem;
+    filter: grayscale(100%);
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+nav img:hover {
+    filter: grayscale(0%);
+}
+
+footer {
+    display: block;
+    margin-bottom: 1rem;
+    text-align: center;
 }
 
 h2 {
-    font-size: 1.875rem;
-    font-family: 'Merriweather', serif;
+    margin-bottom: 0.5rem;
 }
 
-h3 {
-    font-size: 1.5rem;
-    font-family: 'Merriweather', serif;
+a {
+    color: var(--link);
 }
 
-/* navigation bar */
-.flex-nav {
-    /* flexbox */
-    display: flex;
-    /* horizontal orientation */
-    flex-direction: row;
-    /* keep everything on one line */
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: center;
+a:visited {
+    color: var(--visited);
+}
+
+dl {
+    margin: 0;
+}
+
+dt {
+    font-weight: bold;
     margin-top: 1rem;
 }
 
-.name {
-    font-family: 'Merriweather', serif;
-    flex-basis: 100%;
-    text-align: center;
-    color: var(--darkgray);
-    font-size: 2.25rem;
-}
-
-.flex-nav a img {
-    width: 110%;
-    height: auto;
-    padding: 0.5rem;
-    border-radius: 10%;
-    background: var(--background);
-    transition: all 0.1s;
-}
-
-.flex-nav a img:last-child {
-  display: none;  
-}
-
-a:hover img:last-child {
-  display: inline; 
-  background: var(--darkgray);
-}
-
-a:hover img:first-child {
-  display: none;  
-}
-
-/* filter bar */
-input[type="radio"] {
- display: none;
-}
-
-.filters {
-    font-family: 'Merriweather', serif;
-    font-size: 1.3125rem;
-    /* flexbox */
-    display: flex;
-    /* horizontal orientation */
-    flex-direction: row;
-    /* keep everything on one line */
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: center;
-    margin-bottom: 0.5rem;
-    text-align: center;
-}
- 
-.filters label {
-  padding: 0.5rem 1rem;
-  margin-bottom: 0.25rem;
-  margin-right: 0.5rem;
-  min-width: 50px;
-  line-height: normal;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: all 0.1s;
-  color: var(--darkgray);
-  border-style: solid;
-  border-color: var(--background);
-  border-width: 0.2rem;
-}
- 
-.filters label:hover {
-  border-color: var(--darkgray);
-}
-
-.posts h3 {
-    text-align: center;
-}
-
-.post {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 0.25rem 0.6rem;
-  transition: all 0.1s;
-  border-radius: 0.15rem;
-}
-
-.post:link {
-    text-decoration: none;
-    /*color: #1900CD;*/
-    color: var(--foreground);
-}
-
-.post:hover {
-    color: var(--black);
-    border-left: 0.75rem solid var(--darkgray);
-    border-right: 0.75rem solid var(--darkgray);
-}
-
-.post:visited {
-  color: var(--darkgray);
-  background-color: transparent;
-  text-decoration: none;
-}
-
-[value="all"]:checked ~ .posts [data-category] {
-  display: flex;
-}
-
-[value="publications"]:checked ~ .posts .post:not([data-category~="publications"]),
-[value="code"]:checked ~ .posts .post:not([data-category~="code"]),
-[value="projects"]:checked ~ .posts .post:not([data-category~="projects"]),
-[value="opinion"]:checked ~ .posts .post:not([data-category~="opinion"]),
-[value="about"]:checked ~ .posts .post:not([data-category~="about"]) {
-  display: none;
-}
-
-[value="all"]:checked ~ .filters [for="all"],
-[value="publications"]:checked ~ .filters [for="publications"],
-[value="code"]:checked ~ .filters [for="code"],
-[value="projects"]:checked ~ .filters [for="projects"],
-[value="opinion"]:checked ~ .filters [for="opinion"],
-[value="about"]:checked ~ .filters [for="about"] {
-  background: var(--darkgray);
-  color: #F8F8FF;
+dt:first-child {
+    margin-top: 0;
 }
 
 /* actual content */
-.content {
-}
-
-.title {
-    text-align: left;
-}
-
 table {
     margin-left: auto;
     margin-right: auto;
-}
-
-.timestamp {
-    color: var(--darkgray);
-    font-size: 0.75em;
 }
 
 figure img {
@@ -233,41 +130,6 @@ figcaption {
   padding-top: 1.25rem;
 }
     
-
-.src {
-  font-family: "Lucida Console", Monaco, monospace;
-  background-color: #FFFFFF;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  padding: 1.25rem;
-  overflow-x: auto;
-}
-
-.footdef sup {
-    display: inline-block;
-}
-
-.footpara {
-    display: inline-block;
-}
-
-.highlight {
-    border: 1px var(--foreground) solid;
-    padding: 0.5em;
-    margin: auto;
-}
-
-.related {
-}
-
-/* footer */
-.footer {
-    font-family: 'Merriweather', serif;
-    color: var(--lightgray);
-    text-align: center;
-    font-size: 1.00em;
-    padding: 0.5em;
-}
-
 /* MEDIA QUERIES */
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
@@ -281,38 +143,39 @@ figcaption {
     body {
         width: 600px;
     }
-
-    .name {
-        flex-basis: 60%;
-        text-align: left;
-    }
-
-    .filters {
-        justify-content: flex-start;
-    }
-
-    .content {
-        padding: 0em 1em 0em 1em;
-    }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
+
     body {
         width: 768px;
+    }
+
+    header h1 {
+	float: left;
+    }
+
+    nav {
+	width: 16rem;
+	float: right;
+    }
+
+    footer {
+	float: right;
     }
 }
 
 /* *** Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
     body {
-        width: 970px;
+        width: 786px;
     }
 }
 
 /* *** Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) { 
     body {
-        width: 970;
+        width: 768;
     }
 }
