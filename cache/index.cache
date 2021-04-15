@@ -1,5 +1,0 @@
-(setq org-publish-cache (make-hash-table :test 'equal :weakness nil :size 100))
-(puthash ":project:" "index" org-publish-cache)
-(puthash ":cache-file:" "/home/xavier/projects/website/cache/index.cache" org-publish-cache)
-(puthash "/home/xavier/projects/website/index.org" '(:crossrefs nil :index nil) org-publish-cache)
-(puthash "Xa433167fc1221cd56ad7fad28a5ec6fc1a5f9698" '(24536 57454 338234 309000) org-publish-cache)
