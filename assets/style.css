@@ -8,6 +8,7 @@
     --foreground: #000000;
     --link:#0000EE;
     --visited:#551A8B;
+    --inverted: 0;
 }
 
 /* define your dark colorscheme here */
@@ -19,6 +20,7 @@
 	--foreground: #FFFFFF;
 	--link:#FFFF11;
 	--visited:#AAE574;
+	--inverted: 1;
     }
 }
 
@@ -70,13 +72,13 @@ nav {
 nav img {
     display: flex;
     width: 2rem;
-    filter: grayscale(100%);
+    filter: invert(var(--inverted)) grayscale(100%);
     transition: 0.25s;
     cursor: pointer;
 }
 
 nav img:hover {
-    filter: grayscale(0%);
+    filter: invert(var(--inverted)) grayscale(0%);
 }
 
 footer {
