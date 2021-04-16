@@ -43,6 +43,11 @@
   box-sizing: border-box;
 }
 
+/* Fix long links on mobile so that they break */
+a {
+    word-wrap: break-word;
+}
+
 body {
     font-family: "Lato", Helvetica, sans-serif;
     font-size: 1.125rem; /* ~18 px on most browsers */
