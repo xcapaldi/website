@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Xavier Capaldi">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
+    <title>Nanopore size calculator</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <script src="assets/src/pore-calculator.js"></script>
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="assets/favicon/site.webmanifest">
+  </head>
+  <body>
+    <div style="display: flex;flex-direction: column;">
+      <div style="margin: 10px;width: 100%;justify-content: center;">
+        <h1>Nanopore size calculator</h1>
+	<p>Estimate the diameter of a nanopore which is <b>open</b> and whose surface is <b>maximally screened</b>.</p>
+	<!-- buffer information -->
+	<b>Buffer conductivity</b>
+	<div style="display: flex; flex-wrap: wrap; align-items: center;">
+	  <div style="margin: 10px;">
+	    <input type="number" id="conductivity" name="conductivity" min="0" oninput="calculateSize();">
+	  </div>
+	  <div style="margin: 10px; font-size: 125%">
+	    ±
+	  </div>
+	  <div style="margin: 10px;">
+	    <input type="number" id="err_conductivity" name="err_conductivity" min="0" oninput="calculateSize();">
+	  </div>
+	  <div>
+	    <div style="margin: 10px;">
+	      <input type="radio" id="S_m" name="unit_conductivity" value="S_m" onclick="calculateSize();" checked="checked">
+	      <label for="S_m">S/m</label>
+	    </div>
+	    <div style="margin: 10px;">
+	      <input type="radio" id="mS_cm" name="unit_conductivity" value="mS_cm" onclick="calculateSize();">
+	      <label for="mS_cm">mS/cm</label>
+	    </div>
+	  </div>
+	</div>
+	<!-- effective pore length -->
+	<b>Effective pore length</b>
+	<div style="display: flex; flex-wrap: wrap; align-items: center;">
+	  <div style="margin: 10px;">
+	    <input type="number" id="length" name="length" min="0" oninput="calculateSize();">
+	  </div>
+	  <div style="margin: 10px; font-size: 125%">
+	    ±
+	  </div>
+	  <div style="margin: 10px;">
+	    <input type="number" id="err_length" name="err_length" min="0" oninput="calculateSize();">
+	  </div>
+	  <div style="margin: 10px;">
+	    nm
+	  </div>
+	</div>
+	<strong><p style="color: orange">Effective pore length can be estimated as membrane thickness for pores whose diameter is greater than the membrane thickness. Otherwise this will induce significant error.</p></strong>
+        <!-- pore conductance -->
+	<b>Pore conductance</b>
+	<div style="display: flex; flex-wrap: wrap; align-items: center;">
+	  <div style="margin: 10px;">
+	    <input type="number" id="conductance" name="conductance" min="0" oninput="calculateSize();">
+	  </div>
+	  <div style="margin: 10px; font-size: 125%">
+	    ±
+	  </div>
+	  <div style="margin: 10px;">
+	    <input type="number" id="err_conductance" name="err_conductance" min="0" oninput="calculateSize();">
+	  </div>
+	  <div>
+	    <div style="margin: 10px;">
+	      <input type="radio" id="A_V" name="unit_conductance" value="A_V" onclick="calculateSize();" checked="checked">
+	      <label for="A_V">A/V (S)</label>
+	    </div>
+	    <div style="margin: 10px;">
+	      <input type="radio" id="pA_mV" name="unit_conductance" value="pA_mV" onclick="calculateSize();">
+	      <label for="pA_mV">pA/mV</label>
+	    </div>
+	    <div style="margin: 10px;">
+	      <input type="radio" id="nA_mV" name="unit_conductance" value="nA_mV" onclick="calculateSize();">
+	      <label for="nA_mV">nA/mV</label>
+	    </div>
+	  </div>
+	</div>
+	<!-- microfluidic interface -->
+	<b>Channel conductance</b>
+	<div style="display: flex; flex-wrap: wrap; align-items: center;">
+	  <div style="margin: 10px;">
+	    <input type="number" id="ch_conductance" name="ch_conductance" min="0" oninput="calculateSize();">
+	  </div>
+	  <div style="margin: 10px; font-size: 125%">
+	    ±
+	  </div>
+	  <div style="margin: 10px;">
+	    <input type="number" id="err_ch_conductance" name="err_ch_conductance" min="0" oninput="calculateSize();">
+	  </div>
+	  <div>
+	    <div style="margin: 10px;">
+	      <input type="radio" id="ch_A_V" name="unit_ch_conductance" value="ch_A_V" onclick="calculateSize();" checked="checked">
+	      <label for="ch_A_V">A/V (S)</label>
+	    </div>
+	    <div style="margin: 10px;">
+	      <input type="radio" id="ch_pA_mV" name="unit_ch_conductance" value="ch_pA_mV" onclick="calculateSize();">
+	      <label for="ch_pA_mV">pA/mV</label>
+	    </div>
+	    <div style="margin: 10px;">
+	      <input type="radio" id="ch_nA_mV" name="unit_ch_conductance" value="ch_nA_mV" onclick="calculateSize();">
+	      <label for="ch_nA_mV">nA/mV</label>
+	    </div>
+	  </div>
+	</div>
+	<div style="margin: 10px;">
+	  <input type="checkbox" id="double_electrode" name="double_electrode" value="double_electrode" onclick="calculateSize();">
+          <label for="double_electrode">Double electrode?</label>
+	</div>
+	
+	<b>Effective pore diameter:<b></br>
+        <strong><p id="diameter">---</p></strong>
+        <p style="color: gray">This calculator is based on a paper by Dekker's group: <a href="https://iopscience.iop.org/article/10.1088/0957-4484/22/31/315101/meta" target="_blank">https://iopscience.iop.org/article/10.1088/0957-4484/22/31/315101/meta</a> - DOI: 10.1088/0957-4484/22/31/315101</p>
+      </div>
+    </div>
+  </body>
+</html>
