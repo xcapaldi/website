@@ -24,18 +24,16 @@
     }
 }
 
-/* lato-regular - latin */
 @font-face {
-  font-family: 'Lato';
+  font-family: 'Atkinson Hyperlegible';
   font-style: normal;
   font-weight: 400;
-  src: url('../assets/fonts/lato-v17-latin-regular.eot'); /* IE9 Compat Modes */
+  src: url('../assets/fonts/Atkinson-Hyperlegible-Regular-102.eot'); /* IE9 Compat Modes */
   src: local(''),
-       url('../assets/fonts/lato-v17-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('../assets/fonts/lato-v17-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
-       url('../assets/fonts/lato-v17-latin-regular.woff') format('woff'), /* Modern Browsers */
-       url('../assets/fonts/lato-v17-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
-       url('../assets/fonts/lato-v17-latin-regular.svg#Lato') format('svg'); /* Legacy iOS */
+       url('../assets/fonts/Atkinson-Hyperlegible-Regular-102a.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../assets/fonts/Atkinson-Hyperlegible-Regular-102.woff') format('woff'), /* Modern Browsers */
+       url('../assets/fonts/Atkinson-Hyperlegible-Regular-102.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../assets/fonts/Atkinson-Hyperlegible-Regular-102.svg') format('svg'); /* Legacy iOS */
 }
 
 /* padding and border elements are included in the total width and heights */
@@ -49,8 +47,8 @@ a {
 }
 
 body {
-    font-family: "Lato", Helvetica, sans-serif;
-    font-size: 1.125rem; /* ~18 px on most browsers */
+    font-family: "Atkinson Hyperlegible", Helvetica, sans-serif;
+    font-size: 1rem; /* ~16 px on most browsers */
     margin: 0 auto;
     background-color: var(--background);
     color: var(--foreground);
@@ -71,7 +69,7 @@ nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin: 1rem auto;
+    margin: 0.5rem auto;
 }
 
 nav img {
@@ -109,7 +107,7 @@ dl {
 }
 
 dt {
-    font-weight: bold;
+    /*font-weight: bold;*/
     margin-top: 1rem;
 }
 
@@ -176,13 +174,13 @@ figcaption {
 /* *** Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
     body {
-        width: 786px;
+        width: 940px;
     }
 }
 
 /* *** Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) { 
     body {
-        width: 768;
+        width: 1000;
     }
 }
